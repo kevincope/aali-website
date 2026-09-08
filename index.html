@@ -15,10 +15,10 @@
     --terracotta: #c1562d;
     --terracotta-deep: #a3441f;
     --ink: #1c2226;
-    --ink-light: #5b6570;
-    --line: #e4e7ea;
+    --ink-light: #a9b4bd;
+    --line: rgba(255,255,255,0.12);
     --white: #ffffff;
-    --offwhite: #f6f7f9;
+    --offwhite: #0a1f30;
     --font: 'Lato', system-ui, sans-serif;
   }
 
@@ -27,8 +27,8 @@
 
   body {
     font-family: var(--font);
-    color: var(--ink);
-    background: var(--white);
+    color: var(--white);
+    background: var(--navy);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
@@ -43,8 +43,9 @@
     transition: background 0.3s, box-shadow 0.3s;
   }
   nav.scrolled {
-    background: var(--white);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    background: var(--navy);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
   .nav-inner {
     max-width: 1240px; margin: 0 auto;
@@ -56,13 +57,11 @@
     text-decoration: none; color: var(--white);
     transition: color 0.3s;
   }
-  nav.scrolled .nav-brand { color: var(--navy); }
   .nav-brand img {
     height: 116px; width: auto;
     filter: grayscale(1) invert(1) brightness(1.3);
     transition: filter 0.3s;
   }
-  nav.scrolled .nav-brand img { filter: none; }
   .nav-brand-text { display: flex; flex-direction: column; }
   .nav-brand-name {
     font-weight: 900; font-size: 1.45rem; letter-spacing: 0.01em; line-height: 1.15;
@@ -74,10 +73,8 @@
     letter-spacing: 0.12em; text-transform: uppercase;
     transition: color 0.25s; white-space: nowrap;
   }
-  nav.scrolled .nav-links a { color: var(--navy); }
   .nav-links a:hover { color: var(--amber); }
   .nav-links .btn { color: var(--white); }
-  nav.scrolled .nav-links .btn { color: var(--white); }
 
   .hamburger {
     display: none; background: none; border: none; cursor: pointer;
@@ -88,7 +85,6 @@
     background: var(--white); position: absolute; left: 0;
     transition: all 0.3s;
   }
-  nav.scrolled .hamburger span { background: var(--navy); }
   .hamburger span:nth-child(1) { top: 0; }
   .hamburger span:nth-child(2) { top: 8px; }
   .hamburger span:nth-child(3) { top: 16px; }
@@ -223,12 +219,12 @@
   .eyebrow {
     font-size: 0.78rem; font-weight: 700;
     letter-spacing: 0.24em; text-transform: uppercase;
-    color: var(--amber-deep); margin-bottom: 0.6rem;
+    color: var(--amber); margin-bottom: 0.6rem;
   }
   .heading-lg {
     font-weight: 900;
     font-size: clamp(1.9rem, 3.4vw, 2.75rem);
-    line-height: 1.15; color: var(--navy);
+    line-height: 1.15; color: var(--white);
     margin-bottom: 1.5rem;
   }
   .body-copy {
@@ -251,12 +247,12 @@
   }
   .about-stat {
     text-align: left; padding: 1.5rem 1.5rem;
-    background: var(--white);
+    background: var(--navy-mid);
     border: 1px solid var(--line);
     border-left: 4px solid var(--amber);
   }
   .about-stat-num {
-    font-weight: 900; font-size: 2.5rem; color: var(--navy); line-height: 1;
+    font-weight: 900; font-size: 2.5rem; color: var(--amber); line-height: 1;
   }
   .about-stat-label {
     font-size: 0.68rem; font-weight: 700;
@@ -300,19 +296,19 @@
     gap: 2.5rem;
   }
   .icon-card { text-align: left; }
-  .icon-card svg { width: 34px; height: 34px; color: var(--amber-deep); margin-bottom: 1.25rem; }
+  .icon-card svg { width: 34px; height: 34px; color: var(--amber); margin-bottom: 1.25rem; }
   .icon-card-title {
-    font-size: 1.15rem; font-weight: 900; color: var(--navy); margin-bottom: 0.6rem;
+    font-size: 1.15rem; font-weight: 900; color: var(--white); margin-bottom: 0.6rem;
   }
   .icon-card-desc {
     font-size: 0.9rem; color: var(--ink-light); font-weight: 300; margin-bottom: 1rem;
   }
-  .icon-card .arrow-link { margin-top: 0; color: var(--amber-deep); animation: none; }
+  .icon-card .arrow-link { margin-top: 0; color: var(--amber); animation: none; }
 
   /* ── BOARD ── */
   .tier-label {
     font-size: 1.1rem; font-weight: 900;
-    color: var(--navy); margin: 3rem 0 1.5rem;
+    color: var(--white); margin: 3rem 0 1.5rem;
     padding-bottom: 0.6rem;
     border-bottom: 2px solid var(--amber);
     display: inline-block;
@@ -329,12 +325,12 @@
   }
   .board-card {
     padding: 2rem 1.5rem; text-align: center;
-    background: var(--white);
+    background: var(--navy-mid);
     border: 1px solid var(--line);
     transition: all 0.3s;
   }
   .board-card:hover {
-    box-shadow: 0 16px 40px rgba(13,36,54,0.1);
+    box-shadow: 0 16px 40px rgba(250,170,71,0.12);
     transform: translateY(-3px);
   }
   .board-photo {
@@ -350,7 +346,7 @@
     letter-spacing: 0.05em;
   }
   .board-name {
-    font-weight: 900; font-size: 1.05rem; color: var(--navy);
+    font-weight: 900; font-size: 1.05rem; color: var(--white);
   }
   .board-role {
     font-size: 0.78rem; color: var(--ink-light); margin-top: 0.3rem; font-weight: 300;
@@ -367,13 +363,13 @@
   }
   .area-card {
     padding: 1.75rem 1.5rem;
-    background: var(--white);
+    background: var(--navy-mid);
     border: 1px solid var(--line);
     border-top: 3px solid var(--amber);
   }
   .area-title {
     font-weight: 900; font-size: 1rem;
-    color: var(--navy); margin-bottom: 0.6rem;
+    color: var(--white); margin-bottom: 0.6rem;
   }
   .area-desc {
     font-size: 0.88rem; color: var(--ink-light); font-weight: 300; line-height: 1.65;
@@ -389,11 +385,11 @@
     padding: 0.8rem 1.1rem;
     font-family: var(--font); font-size: 0.9rem;
     border: 1px solid var(--line);
-    background: var(--white); color: var(--ink);
+    background: rgba(255,255,255,0.06); color: var(--white);
     transition: border-color 0.25s;
   }
   .research-search::placeholder { color: var(--ink-light); }
-  .research-search:focus { outline: none; border-color: var(--amber-deep); }
+  .research-search:focus { outline: none; border-color: var(--amber); }
   .research-count {
     font-size: 0.72rem; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
@@ -412,7 +408,7 @@
   }
   .research-item:first-child { border-top: 1px solid var(--line); }
   .research-title {
-    font-weight: 700; font-size: 1.02rem; color: var(--ink);
+    font-weight: 700; font-size: 1.02rem; color: var(--white);
     margin-bottom: 0.3rem;
   }
   .research-title a { color: inherit; text-decoration: none; }
@@ -424,8 +420,8 @@
     font-size: 0.65rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.1em;
     padding: 0.3rem 0.75rem;
-    border: 1px solid var(--amber-deep);
-    color: var(--amber-deep); white-space: nowrap;
+    border: 1px solid var(--amber);
+    color: var(--amber); white-space: nowrap;
   }
 
   /* ── EVENTS ── */
@@ -435,13 +431,13 @@
     gap: 1.75rem;
   }
   .event-card {
-    background: var(--white);
+    background: var(--navy-mid);
     border: 1px solid var(--line);
     transition: all 0.3s;
     overflow: hidden;
   }
   .event-card:hover {
-    box-shadow: 0 16px 40px rgba(13,36,54,0.1);
+    box-shadow: 0 16px 40px rgba(250,170,71,0.12);
     transform: translateY(-3px);
   }
   .event-accent { height: 5px; background: var(--amber); }
@@ -449,10 +445,10 @@
   .event-date {
     font-size: 0.7rem; font-weight: 700;
     letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--amber-deep); margin-bottom: 0.65rem;
+    color: var(--amber); margin-bottom: 0.65rem;
   }
   .event-title {
-    font-weight: 900; font-size: 1.2rem; color: var(--navy);
+    font-weight: 900; font-size: 1.2rem; color: var(--white);
     margin-bottom: 0.65rem; line-height: 1.3;
   }
   .event-desc {
