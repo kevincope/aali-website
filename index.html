@@ -1031,6 +1031,13 @@ function renderResearch(items) {
 function applyFilters() {
   const q = researchSearchEl.value.trim().toLowerCase();
   const checkedAreas = areaCheckboxes.filter(cb => cb.checked).map(cb => cb.value);
+
+  if (q === '' && checkedAreas.length === 0) {
+    researchListEl.innerHTML = '<div class="research-empty">Enter search terms or check one or more research areas above to browse the bibliography.</div>';
+    researchCountEl.textContent = `Showing 0 of ${researchItems.length}`;
+    return;
+  }
+
   const filtered = researchItems.filter(item => {
     const matchesSearch = q === '' ||
       item.title.toLowerCase().includes(q) ||
@@ -1047,7 +1054,7 @@ function applyFilters() {
 researchSearchEl.addEventListener('input', applyFilters);
 areaCheckboxes.forEach(cb => cb.addEventListener('change', applyFilters));
 
-renderResearch(researchItems);
+applyFilters();
 </script>
 </body>
 </html>
